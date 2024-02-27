@@ -8,15 +8,13 @@ import java.util.Set;
 public class UserDto {
     private int id;
     private String username;
-    private Set<Role> roles;
 
     public UserDto() {
     }
 
-    public UserDto(int id, String username, Set<Role> roles) {
+    public UserDto(int id, String username) {
         this.id = id;
         this.username = username;
-        this.roles = roles;
     }
 
     public int getId() {
@@ -35,25 +33,17 @@ public class UserDto {
         this.username = username;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserDto userDto = (UserDto) o;
-        return id == userDto.id && Objects.equals(username, userDto.username) && Objects.equals(roles, userDto.roles);
+        return id == userDto.id && Objects.equals(username, userDto.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, roles);
+        return Objects.hash(id, username);
     }
 
     @Override
@@ -61,7 +51,6 @@ public class UserDto {
         return "UserDto{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", roles=" + roles +
                 '}';
     }
 }

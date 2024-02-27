@@ -43,7 +43,6 @@ public class UserService implements UserDetailsService {
     public UserDto registration(UserRegistrationDto registrationDto) {
         User entity = service.mapRegistrationDtoToEntity(registrationDto);
         entity.setId(0);
-        entity.getRoles().add(new Role("USER"));
         entity.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
         entity = repository.save(entity);
         return service.mapEntityToDto(entity);
