@@ -1,4 +1,4 @@
-package de.aittr.g_27_security_practice.domain;
+package de.aittr.g_27_security_practice.domain.dto;
 
 import java.util.Objects;
 

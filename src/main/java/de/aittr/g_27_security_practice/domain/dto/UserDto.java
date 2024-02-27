@@ -1,4 +1,6 @@
-package de.aittr.g_27_security_practice.domain;
+package de.aittr.g_27_security_practice.domain.dto;
+
+import de.aittr.g_27_security_practice.domain.Role;
 
 import java.util.Objects;
 import java.util.Set;
