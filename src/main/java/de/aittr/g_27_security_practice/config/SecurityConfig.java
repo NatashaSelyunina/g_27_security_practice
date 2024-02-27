@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         x -> x
                                 .requestMatchers(HttpMethod.GET, "/car/all").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/user/registration").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/car/by_id/{id}").hasRole("USER")
                                 .requestMatchers(HttpMethod.POST, "/car/save").hasRole("ADMIN")
                                 .anyRequest().hasRole("ADMIN"))
